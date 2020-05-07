@@ -1,0 +1,84 @@
+executables:
+    enzo: enzo
+    music: MUSIC
+
+# for dengo
+paths:
+    HDF5_DIR : /home/kwoksun2/anaconda3
+    HDF5_PATH: /home/kwoksun2/anaconda3
+    CVODE_PATH: /home/kwoksun2/dengo-merge/cvode_instdir
+    SUITESPARSE_PATH: /home/kwoksun2/dengo-merge/suitesparse
+    DENGO_INSTALL_PATH: /home/kwoksun2/dengo_install
+
+dengo_configs:
+    output_dir: dengo_network
+    network_file: dengo-network.py 
+    solver_name: primordial
+    use_omp: False
+    use_cvode: True
+    use_suitesparse: True
+    enforce_conservation: True
+    equilibrium_species: ["H2_2"]
+
+# where the experiment is conducted!
+run_directory:
+    test
+
+enzo_configs:
+    MaximumRefinementLevel: 21
+    MaximumGravityRefinementLevel: 21
+    MaximumParticleRefinementLevel: 13
+    RefineBy: 2
+    CellFlaggingMethod: 2 4 6 7 8
+    MinimumOverDensityForRefinement: 1.0 1.0
+    RefineByJeansLengthSafetyFactor: 4
+    JeansRefinementColdTemperature: 200.0
+    # Output Control
+    OutputFirstTimeAtLevel: 12
+    StopFirstTimeAtLevel: 21
+    # dengo parameter:
+    dengo_reltol: 1.0e-4
+
+
+
+
+music_configs:
+    setup:
+        boxlength  : 0.3
+        zstart     : 100
+        levelmin   : 6
+        levelmin_TF: 6
+        levelmax   : 6
+        ref_center : 0.6914, 0.05, 0.699219
+        ##########################################
+        #things that doesnt require much tweaking#
+        #Included here anyways                   #
+        ##########################################
+        ref_extent: 0.2, 0.2, 0.2
+        padding: 8
+        overlap: 4
+        align_top: "yes"
+        baryons: "yes"
+        use_2LPT: "yes"
+        use_LLA: "yes"
+        periodic_TF: "yes"
+    random:
+        seed[7]: 12345
+        seed[7]: 12345
+        seed[8]: 23456
+        seed[9]: 34567
+        seed[10]: 45678
+        seed[11]: 56789
+        seed[12]: 67890
+    cosmology:
+        Omega_m: 0.276
+        Omega_L: 0.724
+        w0     : -1.0
+        Omega_b: 0.045
+        H0     : 70.3
+        sigma_8: 0.811
+        nspec  : 0.961
+        transfer: eisenstein
+    output:
+        format: enzo
+

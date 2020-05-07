@@ -1,0 +1,87 @@
+# I/O and stop/start parameters
+CycleSkipDataDump = 5 
+RedshiftDumpName = RD
+RedshiftDumpDir  = RD
+DataDumpName     = DD
+DataDumpDir      = DD
+OutputCoolingTime = 1
+OutputTemperature = 1
+OutputFirstTimeAtLevel = 3
+
+CosmologyOutputRedshift[1] = 49.6
+CosmologyOutputRedshift[2] = 26.0
+CosmologyOutputRedshift[3] = 25.0
+CosmologyOutputRedshift[4] = 24.0
+CosmologyOutputRedshift[5] = 23.0
+CosmologyOutputRedshift[6] = 22.0
+CosmologyOutputRedshift[7] = 21.0
+CosmologyOutputRedshift[8] = 20.0
+CosmologyOutputRedshift[9] = 19.0
+CosmologyOutputRedshift[10] = 18.8
+CosmologyOutputRedshift[11] = 18.6
+CosmologyOutputRedshift[12] = 18.4
+CosmologyOutputRedshift[13] = 18.2
+CosmologyOutputRedshift[14] = 18.0
+CosmologyOutputRedshift[15] = 17.8
+CosmologyOutputRedshift[16] = 17.6
+CosmologyOutputRedshift[17] = 17.4
+CosmologyOutputRedshift[18] = 17.2
+CosmologyOutputRedshift[19] = 17.0
+CosmologyOutputRedshift[20] = 16.8
+
+
+
+#
+# hydro parameters
+#
+HydroMethod                 = 0       // PPM
+Gamma                       = 1.6667
+PPMDiffusionParameter       = 0       // diffusion off
+DualEnergyFormalism         = 1       // use total & internal energy
+InterpolationMethod         = 1       // SecondOrderA
+FluxCorrection              = 1
+ConservativeInterpolation   = 1
+CourantSafetyNumber         = 0.5
+ParticleCourantSafetyNumber = 0.8
+UseMinimumPressureSupport   = 0
+
+#
+# grid refinement parameters
+#
+StaticHierarchy                       = 0
+MaximumRefinementLevel                = {{MaximumRefinementLevel}}
+MaximumGravityRefinementLevel         = {{MaximumGravityRefinementLevel}}
+MaximumParticleRefinementLevel        = {{MaximumParticleRefinementLevel}}
+RefineBy                              = 2
+CellFlaggingMethod                    = {{CellFlaggingMethod}}
+MinimumOverDensityForRefinement       = {{MinimumOverDensityForRefinement}}
+MinimumMassForRefinementLevelExponent = {{MinimumMassForRefinementLevelExponent}}
+MinimumEfficiency                     = 0.35
+
+CosmologySimulationParticleTypeName          = RefinementMask
+RefineByJeansLengthSafetyFactor    = {{RefineByJeansLengthSafetyFactor}}
+JeansRefinementColdTemperature     = {{JeansRefinementColdTemperature}}
+OutputFirstTimeAtLevel  = {{OutputFirstTimeAtLevel}}
+StopFirstTimeAtLevel    = {{StopFirstTimeAtLevel}}
+
+#
+# microphysics parameters
+#
+RadiativeCooling        = 1
+use_grackle             = 0
+use_dengo = 1
+MultiSpecies            = 2 // sets grackle.primordial_chemistry
+MetalCooling            = 0 // sets grackle.metal_cooling
+grackle_data_file       = CloudyData_UVB=HM2012.h5
+UVbackground            = 0
+CMBTemperatureFloor     = 1 // sets grackle.cmb_temperature_floor
+ThreeBodyRate = 4
+CIECooling = 1
+H2OpticalDepthApproximation = 1
+UseCoolingTimestep = 1
+dengo_reltol = {{dengo_reltol}}
+
+
+GreensFunctionMaxNumber = 40
+
+
