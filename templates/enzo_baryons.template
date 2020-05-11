@@ -64,6 +64,11 @@ JeansRefinementColdTemperature     = {{JeansRefinementColdTemperature}}
 OutputFirstTimeAtLevel  = {{OutputFirstTimeAtLevel}}
 StopFirstTimeAtLevel    = {{StopFirstTimeAtLevel}}
 
+OutputOnDensity = {{OutputOnDensity}}
+IncrementDensityOutput = {{IncrementDensityOutput}}
+StartDensityOutput = {{StartDensityOutput}}
+StopFirstTimeAtDensity = {{StopFirstTimeAtDensity}}
+
 #
 # microphysics parameters
 #
