@@ -1,0 +1,51 @@
+executables:
+    enzo: enzo
+    music: MUSIC
+
+# where the experiment is conducted!
+run_directory:
+    dmonly_trial
+
+enzo_configs:
+
+
+music_configs:
+    setup:
+        boxlength  : 0.3
+        zstart     : 100
+        levelmin   : 7
+        levelmin_TF: 8
+        levelmax   : 8
+        ref_center : 0.5, 0.5, 0.5
+        ##########################################
+        #things that doesnt require much tweaking#
+        #Included here anyways                   #
+        ##########################################
+        ref_extent: 0.2, 0.2, 0.2
+        padding: 8
+        overlap: 4
+        align_top: "yes"
+        baryons: "no"
+        use_2LPT: "yes"
+        use_LLA: "yes"
+        periodic_TF: "yes"
+    random:
+        seed[6]: 3210921
+        seed[7]: 12345
+        seed[8]: 23456
+        seed[9]: 34567
+        seed[10]: 45678
+        seed[11]: 56789
+        seed[12]: 67890
+    cosmology:
+        Omega_m: 0.276
+        Omega_L: 0.724
+        w0     : -1.0
+        Omega_b: 0.045
+        H0     : 70.3
+        sigma_8: 0.811
+        nspec  : 0.961
+        transfer: eisenstein
+    output:
+        format: enzo
+

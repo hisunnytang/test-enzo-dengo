@@ -50,10 +50,10 @@ music_configs:
     setup:
         boxlength  : 0.3
         zstart     : 50
-        levelmin   : 6
-        levelmin_TF: 6
-        levelmax   : 6
-        ref_center : 0.5 0.5 0.5
+        levelmin   : 7
+        levelmin_TF: 8
+        levelmax   : 8
+        ref_center : 0.36127553556983455, 0.7701083070871431, 0.2166916262240545
         ##########################################
         #things that doesnt require much tweaking#
         #Included here anyways                   #
@@ -68,8 +68,8 @@ music_configs:
         periodic_TF: "yes"
     random:
         seed[6]: 3210921
-        seed[7]: 12345
-        seed[8]: 23456
+        seed[7]: 20745
+        seed[8]: 87721
         seed[9]: 34567
         seed[10]: 45678
         seed[11]: 56789
