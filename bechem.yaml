@@ -1,0 +1,86 @@
+executables:
+    enzo: enzo
+    music: MUSIC
+# for dengo
+paths:
+    HDF5_DIR : /home/kwoksun2/dengo-merge/hdf5_install
+    HDF5_PATH: /home/kwoksun2/dengo-merge/hdf5_install
+    LIBTOOL_PATH: /usr/bin/libtool
+    CVODE_PATH: /home/kwoksun2/dengo-merge/cvode_instdir
+    SUITESPARSE_PATH: /home/kwoksun2/dengo-merge/suitesparse
+    DENGO_INSTALL_PATH: /home/kwoksun2/dengo_install
+
+dengo_configs:
+    output_dir:   dengo_build_bechem
+    network_file: mynetwork 
+    solver_name: dengo_bechm_primordial
+    solver_option: be_chem
+    omp_num_threads: 40
+
+# where the experiment is conducted!
+run_directory:
+    bechem_enzo
+
+enzo_configs:
+    FinalRedshift: 17
+    MaximumRefinementLevel: 21
+    MaximumGravityRefinementLevel: 21
+    MaximumParticleRefinementLevel: 8
+    RefineBy: 2
+    CellFlaggingMethod: 2 4 6 7 8
+    MinimumOverDensityForRefinement: 1.5 1.5
+    RefineByJeansLengthSafetyFactor: 16
+    JeansRefinementColdTemperature: 200.0
+    # Output Control
+    OutputFirstTimeAtLevel: 12
+    StopFirstTimeAtDensity: 22
+    OutputOnDensity: 1
+    StartDensityOutput: -20.0
+    IncrementDensityOutput: 2.0
+    StopFirstTimeAtDensity: -9.0 
+    # dengo parameter:
+    dengo_reltol: 1.0e-5
+
+
+
+
+music_configs:
+    setup:
+        boxlength  : 0.3
+        zstart     : 50
+        levelmin   : 7
+        levelmin_TF: 8
+        levelmax   : 8
+        ref_center : 0.36127553556983455, 0.7701083070871431, 0.2166916262240545
+        ##########################################
+        #things that doesnt require much tweaking#
+        #Included here anyways                   #
+        ##########################################
+        ref_extent: 0.2, 0.2, 0.2
+        padding: 8
+        overlap: 4
+        align_top: "yes"
+        baryons: "yes"
+        use_2LPT: "yes"
+        use_LLA: "yes"
+        periodic_TF: "yes"
+    random:
+        seed[6]: 3210921
+        seed[7]: 20745
+        seed[8]: 87721
+        seed[9]: 34567
+        seed[10]: 45678
+        seed[11]: 56789
+        seed[12]: 67890
+    cosmology:
+        Omega_m: 0.276
+        Omega_L: 0.724
+        w0     : -1.0
+        Omega_b: 0.045
+        H0     : 70.3
+        sigma_8: 0.811
+        nspec  : 0.961
+        transfer: eisenstein
+    output:
+        format: enzo
+
