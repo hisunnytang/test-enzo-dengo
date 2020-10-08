@@ -67,6 +67,7 @@ StopFirstTimeAtLevel    = {{StopFirstTimeAtLevel}}
 OutputOnDensity = {{OutputOnDensity}}
 IncrementDensityOutput = {{IncrementDensityOutput}}
 StartDensityOutputs = {{StartDensityOutputs}}
+CurrentDensityOutput = {{StartDensityOutputs}}
 StopFirstTimeAtDensity = {{StopFirstTimeAtDensity}}
 
 #
